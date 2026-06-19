@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gemiry — Apps crafted to be beautiful, simple, and easy to use</title>
+    <meta
+      name="description"
+      content="Gemiry is a small studio crafting apps that are beautiful, simple, and easy to use for everyone."
+    />
+    <!-- Mark JS as available before paint so scroll-reveal can hide content
+         without flashing; content stays visible if JS is off. -->
+    <script>
+      document.documentElement.className += " js";
+    </script>
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Gemiry" />
+    <meta
+      property="og:description"
+      content="We craft apps that are beautiful, simple, and easy to use for everyone."
+    />
+    <meta property="og:url" content="https://gemiry.com/" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="site-header">
+      <div class="container nav">
+        <a class="brand" href="#top" aria-label="Gemiry home">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <defs>
+              <linearGradient id="b" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#7c6cff" />
+                <stop offset="1" stop-color="#4f46e5" />
+              </linearGradient>
+            </defs>
+            <path fill="url(#b)" d="M12 5h16l7 9-15 21L5 14z" />
+            <path fill="#fff" fill-opacity="0.28" d="M12 5h16l-8 9z" />
+          </svg>
+          Gemiry
+        </a>
+
+        <nav aria-label="Primary">
+          <button
+            class="nav-toggle"
+            aria-label="Toggle menu"
+            aria-controls="nav-links"
+            aria-expanded="false"
+          >
+            <span></span>
+          </button>
+          <ul class="nav-links" id="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#careers">Careers</a></li>
+            <li><a class="btn btn--primary" href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <h1 class="reveal">
+              Apps crafted to be
+              <span class="accent">beautiful, simple, and easy to use</span>
+              for everyone.
+            </h1>
+            <p class="lead reveal" style="--reveal-delay: 0.14s;">
+              Gemiry is a small studio with a simple belief: great software
+              should feel effortless. We sweat the details so the people who use
+              our apps don't have to.
+            </p>
+            <div class="hero-actions reveal" style="--reveal-delay: 0.22s;">
+              <a class="btn btn--primary" href="#about">Our vision</a>
+              <a class="btn btn--ghost" href="#contact">Get in touch</a>
+            </div>
+          </div>
+
+          <!-- Phone mockup illustration -->
+          <div class="device-wrap reveal" style="--reveal-delay: 0.2s;" aria-hidden="true">
+            <div class="glow"></div>
+
+            <div class="chip chip--1">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5.5L20 11l-5.5 2.5L12 19l-2.5-5.5L4 11l5.5-2.5z"/></svg>
+              Beautiful
+            </div>
+            <div class="chip chip--2">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+              Effortless
+            </div>
+
+            <div class="device">
+              <div class="device-screen">
+                <div class="scr-hero">
+                  <div class="sub">Good morning</div>
+                  <div class="title">Simple by design.</div>
+                </div>
+                <div class="scr-body">
+                  <div class="scr-card">
+                    <span class="dot"></span>
+                    <span class="lines"><i></i><i></i></span>
+                  </div>
+                  <div class="scr-card">
+                    <span class="dot"></span>
+                    <span class="lines"><i></i><i></i></span>
+                  </div>
+                  <div class="scr-card">
+                    <span class="dot"></span>
+                    <span class="lines"><i></i><i></i></span>
+                  </div>
+                </div>
+                <div class="scr-tabbar">
+                  <i></i><i></i><i></i><i></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="section section--alt" id="about">
+        <div class="container about-grid">
+          <div class="about-copy reveal">
+            <span class="eyebrow">About us</span>
+            <h2>Thoughtful software, made with care.</h2>
+            <p>
+              We're Gemiry — a small, independent team that loves building apps.
+              We believe technology is at its best when it gets out of the way:
+              when it's clear, calm, and genuinely helpful.
+            </p>
+            <p>
+              Every product we make starts from the same question — how do we
+              make this simpler? We obsess over the small details, polish the
+              rough edges, and design for real people, not power users. The
+              result is software that feels good to use from the very first tap.
+            </p>
+          </div>
+
+          <div class="about-media">
+            <div class="cards" style="grid-template-columns: 1fr;">
+              <div class="card reveal">
+                <div class="ic" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>
+                </div>
+                <h3>Simple</h3>
+                <p>We remove the clutter so what matters stands out.</p>
+              </div>
+              <div class="card reveal" style="--reveal-delay: 0.1s;">
+                <div class="ic" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.5 5.5L20 11l-5.5 2.5L12 19l-2.5-5.5L4 11l5.5-2.5z"/></svg>
+                </div>
+                <h3>Beautiful</h3>
+                <p>Considered design and craft in every screen.</p>
+              </div>
+              <div class="card reveal" style="--reveal-delay: 0.2s;">
+                <div class="ic" aria-hidden="true">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+                </div>
+                <h3>For everyone</h3>
+                <p>Easy to use, whoever you are and wherever you start.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Careers -->
+      <section class="section" id="careers">
+        <div class="container">
+          <div class="section-head reveal">
+            <span class="eyebrow">Careers</span>
+            <h2>Come build with us.</h2>
+            <p class="lead">
+              We're a small team looking for developers who care about craft.
+              Join us to build apps that feel effortless — across every platform.
+            </p>
+          </div>
+
+          <div class="cards">
+            <article class="card job reveal">
+              <div class="ic" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2" width="10" height="20" rx="2.5"/><path d="M11 18h2"/></svg>
+              </div>
+              <h3>iOS Developer</h3>
+              <p>
+                Craft delightful native experiences for iPhone and iPad with
+                Swift and SwiftUI.
+              </p>
+              <span class="salary">Up to 25,000,000 ₫ / month</span>
+              <a
+                class="btn btn--primary"
+                href="mailto:career@gemiry.com?subject=Application%3A%20iOS%20Developer"
+                >Apply now</a
+              >
+            </article>
+
+            <article class="card job reveal" style="--reveal-delay: 0.1s;">
+              <div class="ic" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="8" width="14" height="11" rx="2.5"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/><path d="M8 4.5 6.5 3M16 4.5 17.5 3M9 13h.01M15 13h.01"/></svg>
+              </div>
+              <h3>Android Developer</h3>
+              <p>
+                Build fast, beautiful apps for Android with Kotlin and Jetpack
+                Compose.
+              </p>
+              <span class="salary">Up to 25,000,000 ₫ / month</span>
+              <a
+                class="btn btn--primary"
+                href="mailto:career@gemiry.com?subject=Application%3A%20Android%20Developer"
+                >Apply now</a
+              >
+            </article>
+
+            <article class="card job reveal" style="--reveal-delay: 0.2s;">
+              <div class="ic" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+              </div>
+              <h3>Windows Developer</h3>
+              <p>
+                Create polished desktop apps for Windows with C# and modern
+                WinUI.
+              </p>
+              <span class="salary">Up to 25,000,000 ₫ / month</span>
+              <a
+                class="btn btn--primary"
+                href="mailto:career@gemiry.com?subject=Application%3A%20Windows%20Developer"
+                >Apply now</a
+              >
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="section section--alt" id="contact">
+        <div class="container">
+          <div class="contact-card reveal">
+            <span class="eyebrow">Contact</span>
+            <h2>We'd love to hear from you.</h2>
+            <p>
+              Questions, feedback, or just want to say hello? Reach out any time
+              — we read every message.
+            </p>
+            <a class="btn" href="mailto:contact@gemiry.com">contact@gemiry.com</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-inner">
+          <a class="brand" href="#top">
+            <svg viewBox="0 0 40 40" aria-hidden="true">
+              <defs>
+                <linearGradient id="bf" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#7c6cff" />
+                  <stop offset="1" stop-color="#4f46e5" />
+                </linearGradient>
+              </defs>
+              <path fill="url(#bf)" d="M12 5h16l7 9-15 21L5 14z" />
+              <path fill="#fff" fill-opacity="0.28" d="M12 5h16l-8 9z" />
+            </svg>
+            Gemiry
+          </a>
+          <span>&copy; <span id="year">2026</span> Gemiry Company Limited. All rights reserved.</span>
+          <a href="mailto:contact@gemiry.com">contact@gemiry.com</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

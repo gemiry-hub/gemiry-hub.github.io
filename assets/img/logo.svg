@@ -1,11 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" role="img" aria-label="Gemiry">
+<svg xmlns="http://www.w3.org/2000/svg" width="718" height="554" viewBox="0 0 718 554" role="img" aria-label="Gemiry">
   <defs>
-    <linearGradient id="gem" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#6d7cff"/>
-      <stop offset="1" stop-color="#4f46e5"/>
+    <linearGradient id="g" x1="0" y1="554" x2="718" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6E3FF3"/>
+      <stop offset="1" stop-color="#3C5DFF"/>
     </linearGradient>
   </defs>
-  <path fill="url(#gem)" d="M12 5h16l7 9-15 21L5 14z"/>
-  <path fill="#ffffff" fill-opacity="0.28" d="M12 5h16l-8 9z"/>
-  <path fill="#ffffff" fill-opacity="0.16" d="M5 14h15l0 21z"/>
+  <path d="M478.801 553.096H0L239.4 138.442L478.801 553.096ZM717.775 0L478.376 414.653L238.976 0H717.775Z" fill="url(#g)"/>
 </svg>

@@ -1,11 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 718 718" width="718" height="718">
   <defs>
-    <linearGradient id="gem" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#6d7cff"/>
-      <stop offset="1" stop-color="#4f46e5"/>
+    <linearGradient id="g" x1="0" y1="554" x2="718" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6E3FF3"/>
+      <stop offset="1" stop-color="#3C5DFF"/>
     </linearGradient>
   </defs>
-  <rect width="40" height="40" rx="9" fill="#ffffff"/>
-  <path fill="url(#gem)" d="M11 7h18l5 8-14 18L6 15z"/>
-  <path fill="#ffffff" fill-opacity="0.30" d="M11 7h18l-9 8z"/>
+  <rect width="718" height="718" rx="160" fill="#ffffff"/>
+  <g transform="translate(107.7,165.1) scale(0.7)">
+    <path d="M478.801 553.096H0L239.4 138.442L478.801 553.096ZM717.775 0L478.376 414.653L238.976 0H717.775Z" fill="url(#g)"/>
+  </g>
 </svg>

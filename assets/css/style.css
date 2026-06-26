@@ -206,8 +206,8 @@ svg {
 }
 
 .brand svg {
-  width: 30px;
-  height: 30px;
+  width: auto;
+  height: 26px;
   filter: drop-shadow(0 4px 10px rgba(79, 70, 229, 0.35));
 }
 

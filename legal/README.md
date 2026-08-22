@@ -41,11 +41,17 @@ each app's store listing and in-app "Privacy" / "Terms" links.
    placeholders:
    - `[App Name]` — the app's display name
    - `[Month DD, YYYY]` — the "Last updated" date
-   - `[jurisdiction]` — governing law (Terms only)
+   - `[one-line description ...]` — what the app does (Terms intro)
    - Edit the bracketed `[...]` notes to match what the app actually does
-     (data collected, third-party services, purchases, etc.). Remove any
-     sections that don't apply.
+     (data collected, third-party services, purchases, ads, etc.). Fill in
+     the app-specific Terms section (section 3) with the one thing the user
+     must take responsibility for, remove any sections that don't apply,
+     and renumber the headings.
+   - Governing law is already written as worldwide / country of
+     establishment with consumer-law carve-out — leave it as is.
 
-3. Commit and push. The page is live at the URL pattern above.
+3. Add the app to the **Apps** table above.
+
+4. Commit and push. The page is live at the URL pattern above.
 
 > Keep the `_template` folder as-is so it stays available for the next app.

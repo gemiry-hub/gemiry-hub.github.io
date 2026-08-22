@@ -41,9 +41,13 @@ each app's store listing and in-app "Privacy" / "Terms" links.
    placeholders:
    - `[App Name]` — the app's display name
    - `[Month DD, YYYY]` — the "Last updated" date
-   - `[one-line description ...]` — what the app does (Terms intro)
+   - `[one-line description ...]` — what the app does (intro of both pages)
+   - `[... list the stores it ships on]` — platforms / stores (Privacy intro)
    - Edit the bracketed `[...]` notes to match what the app actually does
-     (data collected, third-party services, purchases, ads, etc.). Fill in
+     (what stays on-device, permissions, which SDKs — Firebase / AdMob /
+     none — purchases, ads, etc.). The Privacy template assumes the Gemiry
+     default of "we collect nothing ourselves"; if an app ever does collect
+     data directly, rewrite sections 1, 5 and 7 honestly. Fill in
      the app-specific Terms section (section 3) with the one thing the user
      must take responsibility for, remove any sections that don't apply,
      and renumber the headings.

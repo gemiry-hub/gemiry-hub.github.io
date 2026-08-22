@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Authik — Two-factor codes, offline</title>
+<meta name="description" content="Authik generates your standard 6-digit two-factor codes on the device itself. No account, no cloud, no signal required.">
+<link rel="icon" href="assets/authik-mark.svg">
+<link rel="canonical" href="https://gemiry.com/authik/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Authik — Two-factor codes, offline">
+<meta property="og:description" content="Authik generates your standard 6-digit two-factor codes on the device itself. No account, no cloud, no signal required.">
+<meta property="og:url" content="https://gemiry.com/authik/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0A1442; --ink-2: #2E3460; --ink-3: #6B7099; --ink-4: #8B8FAE;
+    --blue: #3C5DFF; --blue-deep: #2742E5; --blue-tint: #E7EDFF;
+    --bg: #E9EEFF; --surface: #fff; --surface-2: #F5F7FF;
+    --shadow-card: 0 4px 20px rgba(40,55,120,.06);
+    --shadow-window: 0 40px 100px rgba(6,20,80,.26);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; color: var(--ink); background: linear-gradient(180deg, #E9EEFF 0%, #F4F6FF 60%, #E9EEFF 100%);
+    font-family: "Inter", system-ui, sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden;
+  }
+  a { color: var(--blue-deep); text-decoration: none; }
+  a:hover { color: #1C33B8; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 40px; }
+  .display { font-family: "Poppins", system-ui, sans-serif; font-weight: 800; letter-spacing: -.025em; }
+
+  .hero { display: grid; grid-template-columns: minmax(0,.88fr) minmax(0,1.12fr); gap: 40px; align-items: center; padding-top: 88px; }
+  .hero-copy { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
+  .lockup { display: flex; align-items: center; gap: 16px; }
+  .lockup img { width: 86px; height: auto; display: block; }
+  .lockup span { font-family: "Poppins", sans-serif; font-weight: 800; font-size: 34px; letter-spacing: -.025em; }
+  h1 { font-size: clamp(40px, 4.4vw, 58px); line-height: 1.03; margin: 0; max-width: 560px; text-wrap: balance; }
+  .lede { margin: 0; font-size: 19px; line-height: 1.55; color: var(--ink-2); max-width: 420px; text-wrap: pretty; }
+
+  .badges { display: flex; flex-wrap: wrap; gap: 12px; }
+  .badge { display: flex; align-items: center; gap: 10px; height: 52px; padding: 0 16px; border-radius: 8px; background: #000; }
+  .badge:hover { filter: brightness(1.25); }
+  .badge-text { display: flex; flex-direction: column; line-height: 1; text-align: left; color: #fff; }
+  .badge-text small { font-size: 10px; font-weight: 400; }
+  .badge-text small.caps { font-size: 9px; font-weight: 500; letter-spacing: .1em; text-transform: uppercase; }
+  .badge-text strong { font-size: 19px; font-weight: 500; letter-spacing: -.01em; margin-top: 2px; }
+  .ms-mark { display: grid; grid-template-columns: 10px 10px; grid-template-rows: 10px 10px; gap: 2.5px; }
+
+  .mockups { display: flex; align-items: flex-end; gap: 20px; padding: 24px 0; }
+  .window { flex: 1 1 auto; min-width: 0; border-radius: 12px; overflow: hidden; background: var(--surface); box-shadow: var(--shadow-window); }
+  .titlebar { display: flex; align-items: center; gap: 8px; padding: 13px 15px; background: var(--surface-2); box-shadow: inset 0 -1px 0 rgba(10,20,66,.06); }
+  .dot { width: 11px; height: 11px; border-radius: 999px; }
+  .titlebar .name { font-size: 12px; font-weight: 600; color: var(--ink-3); }
+  .rows { padding: 14px; display: flex; flex-direction: column; gap: 10px; }
+  .row { display: flex; align-items: center; gap: 11px; padding: 12px 13px; border-radius: 12px; background: var(--surface-2); }
+  .row .mark { width: 32px; height: 32px; flex-shrink: 0; border-radius: 8px; background: #fff center / 22px 22px no-repeat; }
+  .row .meta { flex: 1; min-width: 0; }
+  .row .issuer { font-size: 12px; font-weight: 500; color: var(--ink-3); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .code { font-family: "SF Mono", ui-monospace, Menlo, monospace; font-size: 21px; font-weight: 600; letter-spacing: .03em; white-space: nowrap; font-variant-numeric: tabular-nums; }
+  .ring { display: grid; place-items: center; width: 34px; height: 34px; flex-shrink: 0; border-radius: 999px; }
+  .ring span { display: grid; place-items: center; width: 27px; height: 27px; border-radius: 999px; background: var(--surface-2); font-size: 12px; font-weight: 600; color: var(--ink-2); font-variant-numeric: tabular-nums; }
+
+  .phone { flex: 0 0 184px; width: 184px; padding: 7px; border-radius: 38px; background: #0B0B12; box-shadow: 0 26px 64px rgba(6,20,80,.34); }
+  .screen { border-radius: 34px; overflow: hidden; background: var(--bg); padding: 12px 11px 16px; }
+  .status { display: flex; align-items: center; justify-content: space-between; padding: 0 6px 12px; font-size: 11px; font-weight: 600; }
+  .notch { width: 54px; height: 15px; border-radius: 999px; background: #0B0B12; }
+  .screen-head { display: flex; justify-content: space-between; align-items: center; padding: 0 4px 12px; }
+  .screen-head span { font-family: "Poppins", sans-serif; font-weight: 800; font-size: 17px; letter-spacing: -.02em; }
+  .p-card { padding: 11px 12px; border-radius: 16px; background: #fff; box-shadow: var(--shadow-card); }
+  .p-card .top { display: flex; align-items: center; gap: 6px; }
+  .p-card .mark { width: 14px; height: 14px; flex-shrink: 0; background: center / contain no-repeat; }
+  .p-card .name { font-size: 10px; font-weight: 600; color: var(--ink-3); }
+  .p-card .code { font-size: 18px; margin-top: 2px; }
+
+  .pillars { padding-top: 100px; display: flex; flex-direction: column; }
+  .pillar { display: grid; grid-template-columns: 52px minmax(0,240px) minmax(0,1fr); gap: 24px; align-items: start; padding: 30px 0; box-shadow: inset 0 -1px 0 rgba(10,20,66,.08); }
+  .pillar .icon { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 14px; background: var(--blue-tint); color: var(--blue); }
+  .pillar h3 { font-family: "Poppins", sans-serif; font-weight: 700; font-size: 22px; letter-spacing: -.015em; margin: 8px 0 0; }
+  .pillar p { margin: 10px 0 0; font-size: 15px; line-height: 1.6; color: var(--ink-2); text-wrap: pretty; }
+
+  .issuers { padding-top: 72px; display: grid; grid-template-columns: minmax(0,260px) minmax(0,1fr); gap: 60px; align-items: center; }
+  .eyebrow { font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); }
+  .issuer-logos { display: flex; flex-wrap: wrap; gap: 30px; align-items: center; opacity: .7; }
+  .issuer-logos img { height: 26px; object-fit: contain; }
+
+  footer { padding: 88px 0 56px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center; justify-content: space-between; }
+  footer .by { display: flex; align-items: center; gap: 10px; font-size: 14px; font-weight: 600; color: var(--ink-2); }
+  footer .by img { width: 22px; height: auto; }
+  footer .sig { font-size: 11px; font-weight: 700; letter-spacing: .1em; color: var(--ink-4); }
+  footer .links { display: flex; gap: 20px; font-size: 13px; font-weight: 500; }
+  footer .links a { color: var(--ink-3); }
+  footer .links a:hover { color: var(--blue-deep); }
+
+  @media (max-width: 1000px) {
+    .hero { grid-template-columns: minmax(0,1fr); gap: 48px; padding-top: 56px; }
+    .issuers { grid-template-columns: minmax(0,1fr); gap: 20px; }
+    .pillar { grid-template-columns: 44px minmax(0,1fr); }
+    .pillar p { grid-column: 2; }
+  }
+  @media (max-width: 620px) {
+    .wrap { padding: 0 22px; }
+    .mockups { flex-direction: column; align-items: stretch; }
+    .phone { align-self: center; }
+  }
+</style>
+</head>
+<body>
+<main class="wrap">
+  <section class="hero">
+    <div class="hero-copy">
+      <div class="lockup">
+        <img src="assets/authik-mark.svg" alt="Authik">
+        <span>Authik</span>
+      </div>
+      <h1 class="display">Two-factor codes, offline.</h1>
+      <p class="lede">Authik generates your standard 6-digit codes on the device itself. No account, no cloud, no waiting for a signal.</p>
+      <div class="badges">
+        <a class="badge" href="#" aria-label="Download on the App Store">
+          <svg width="22" height="26" viewBox="0 0 22 26" fill="#fff" aria-hidden="true"><path d="M18.1 13.7c0-3 2.4-4.4 2.5-4.5-1.4-2-3.5-2.3-4.2-2.3-1.8-.2-3.5 1-4.4 1-.9 0-2.3-1-3.8-1C6.3 6.9 4.3 8 3.2 9.9c-2.2 3.8-.6 9.5 1.6 12.6 1 1.5 2.3 3.2 3.9 3.1 1.5-.1 2.1-1 4-1 1.9 0 2.4 1 4 1 1.7 0 2.8-1.5 3.8-3 1.2-1.8 1.7-3.5 1.7-3.6-.1 0-3.2-1.3-3.2-4.8zM15.3 4.6c.8-1 1.4-2.3 1.2-3.7-1.2 0-2.7.8-3.5 1.8-.8.9-1.5 2.3-1.3 3.6 1.4.1 2.8-.7 3.6-1.7z"/></svg>
+          <span class="badge-text"><small>Download on the</small><strong>App Store</strong></span>
+        </a>
+        <a class="badge" href="#" aria-label="Get it on Google Play">
+          <svg width="23" height="25" viewBox="0 0 23 25" aria-hidden="true"><path d="M1.3 1.1C1 1.4.9 1.9.9 2.6v19.8c0 .7.1 1.2.4 1.5l11-11-11-11.8z" fill="#00D3FF"/><path d="M15.6 8.4L3.1.4C2.5 0 1.9-.1 1.5.2l10.8 11.7 3.3-3.5z" fill="#00F076"/><path d="M15.6 16.6l-3.3-4.7 3.3-3.5 5.4 3.5c1.3.8 1.3 2.2 0 3l-5.4 1.7z" fill="#FFCE00"/><path d="M12.3 11.9L1.5 24.8c.4.3 1 .2 1.6-.2l12.5-8-3.3-4.7z" fill="#FF3A44"/></svg>
+          <span class="badge-text"><small class="caps">Get it on</small><strong>Google Play</strong></span>
+        </a>
+        <a class="badge" href="#" aria-label="Get it from Microsoft">
+          <span class="ms-mark" aria-hidden="true">
+            <span style="background:#F25022"></span><span style="background:#7FBA00"></span>
+            <span style="background:#00A4EF"></span><span style="background:#FFB900"></span>
+          </span>
+          <span class="badge-text"><small>Get it from</small><strong>Microsoft</strong></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="mockups">
+      <div class="window">
+        <div class="titlebar">
+          <span class="dot" style="background:#FF5F57"></span>
+          <span class="dot" style="background:#FEBC2E"></span>
+          <span class="dot" style="background:#28C840"></span>
+          <span style="flex:1"></span>
+          <span class="name">Authik</span>
+          <span style="flex:1"></span>
+        </div>
+        <div class="rows" id="desktop-rows"></div>
+      </div>
+
+      <div class="phone">
+        <div class="screen">
+          <div class="status"><span>9:41</span><span class="notch"></span><span>100%</span></div>
+          <div class="screen-head"><span>Authik</span></div>
+          <div id="phone-rows" style="display:flex;flex-direction:column;gap:8px"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pillars">
+    <article class="pillar">
+      <span class="icon" aria-hidden="true">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2 8.8a17 17 0 0 1 6-3.5M20.6 12.9A17 17 0 0 0 16 9.2M5 12.9a12 12 0 0 1 3-1.8M8.5 16.4a7 7 0 0 1 7 0M12 20h.01M2 2l20 20"/></svg>
+      </span>
+      <h3>Never online</h3>
+      <p>Codes come from the clock on your device. No network call, ever — a plane, a basement or a dead SIM makes no difference.</p>
+    </article>
+    <article class="pillar">
+      <span class="icon" aria-hidden="true">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M17.5 19H9a7 7 0 1 1 6.7-9.3A5 5 0 0 1 21 15M2 2l20 20"/></svg>
+      </span>
+      <h3>Never in a cloud</h3>
+      <p>No sign-up and no server. Secrets stay on the device, encrypted at rest, and move only if you export them yourself.</p>
+    </article>
+    <article class="pillar">
+      <span class="icon" aria-hidden="true">
+        <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.7 9a1 1 0 0 1-.6 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.7a1 1 0 0 1 1.3 0C14.3 3.8 16.8 5 18.8 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+      </span>
+      <h3>Never a custom scheme</h3>
+      <p>Plain TOTP, the same standard every site already supports, unlocked with Face ID, fingerprint or Windows Hello.</p>
+    </article>
+  </section>
+
+  <section class="issuers">
+    <span class="eyebrow">Works with every 6-digit code service</span>
+    <div class="issuer-logos">
+      <img src="assets/issuers/google.png" alt="Google">
+      <img src="assets/issuers/microsoft.png" alt="Microsoft">
+      <img src="assets/issuers/apple.png" alt="Apple">
+      <img src="assets/issuers/github.png" alt="GitHub">
+      <img src="assets/issuers/aws.png" alt="AWS">
+      <img src="assets/issuers/stripe.png" alt="Stripe">
+      <img src="assets/issuers/slack.png" alt="Slack">
+      <img src="assets/issuers/notion.png" alt="Notion">
+    </div>
+  </section>
+
+  <footer>
+    <div class="by"><img src="assets/authik-mark.svg" alt=""> <a href="/" style="color:inherit">Authik by Gemiry</a></div>
+    <nav class="links" aria-label="Legal"><a href="/legal/authik/privacy/">Privacy Policy</a><a href="mailto:contact@gemiry.com">Contact</a></nav>
+    <div class="sig">DEVELOPED WITH &#9749; BY &#128053; AT &#128340;</div>
+  </footer>
+</main>
+
+<script>
+  var desktop = [
+    ["GitHub", "octo@authik.app", "github", 31],
+    ["Google", "hello@authik.app", "google", 57],
+    ["AWS", "prod-admin", "aws", 83],
+    ["Stripe", "billing", "stripe", 119]
+  ];
+  var phone = [
+    ["Notion", "notion", 173], ["Slack", "slack", 197], ["Apple", "apple", 211],
+    ["Figma", "figma", 227], ["Dropbox", "dropbox", 241]
+  ];
+  function code(seed, step) {
+    var v = (seed * 7919 + step * 104729) % 1000000;
+    return String(v).padStart(6, "0").replace(/^(\d{3})(\d{3})$/, "$1 $2");
+  }
+  function render() {
+    var now = Date.now() / 1000, step = Math.floor(now / 30), left = 30 - Math.floor(now % 30);
+    var pct = (left / 30) * 100;
+    var ring = "conic-gradient(#3C5DFF " + pct + "%, rgba(10,20,66,.10) " + pct + "%)";
+    document.getElementById("desktop-rows").innerHTML = desktop.map(function (a) {
+      return '<div class="row"><div class="mark" style="background-image:url(assets/issuers/' + a[2] + '.png)"></div>' +
+        '<div class="meta"><div class="issuer">' + a[0] + ' &middot; ' + a[1] + '</div>' +
+        '<div class="code">' + code(a[3], step) + '</div></div>' +
+        '<div class="ring" style="background:' + ring + '"><span>' + left + '</span></div></div>';
+    }).join("");
+    document.getElementById("phone-rows").innerHTML = phone.map(function (a) {
+      return '<div class="p-card"><div class="top"><div class="mark" style="background-image:url(assets/issuers/' + a[1] + '.png)"></div>' +
+        '<span class="name">' + a[0] + '</span></div><div class="code">' + code(a[2], step) + '</div></div>';
+    }).join("");
+  }
+  render();
+  setInterval(render, 1000);
+</script>
+</body>
+</html>

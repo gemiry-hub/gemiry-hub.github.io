@@ -21,13 +21,13 @@ each app's store listing and in-app "Privacy" / "Terms" links.
 | --- | --- | --- | --- |
 | Audio Converter | `audioconverter` | ✅ | ✅ |
 | Authik | `authik` | ✅ | ✅ |
-| Duplicate Cleaner | `duplicatecleaner` | ✅ | — |
-| MonitorSync | `monitorsync` | ✅ | — |
+| Duplicate Cleaner | `duplicatecleaner` | ✅ | ✅ |
+| MonitorSync | `monitorsync` | ✅ | ✅ |
 | PDF Toys | `pdftoys` | ✅ | ✅ |
-| Scann | `scann` | ✅ | — |
-| Snipik | `snipik` | ✅ | — |
-| Volmix | `volmix` | ✅ | — |
-| Zipik | `zipik` | ✅ | — |
+| Scann | `scann` | ✅ | ✅ |
+| Snipik | `snipik` | ✅ | ✅ |
+| Volmix | `volmix` | ✅ | ✅ |
+| Zipik | `zipik` | ✅ | ✅ |
 
 ## Adding a new app
 

@@ -20,7 +20,7 @@ each app's store listing and in-app "Privacy" / "Terms" links.
 | App | Slug | Privacy | Terms |
 | --- | --- | --- | --- |
 | Audio Converter | `audioconverter` | ✅ | ✅ |
-| Authik | `authik` | ✅ | — |
+| Authik | `authik` | ✅ | ✅ |
 | Duplicate Cleaner | `duplicatecleaner` | ✅ | — |
 | MonitorSync | `monitorsync` | ✅ | — |
 | PDF Toys | `pdftoys` | ✅ | ✅ |

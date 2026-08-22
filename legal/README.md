@@ -15,6 +15,20 @@ https://gemiry.com/legal/<app-slug>/terms/
 The clean URL comes from the folder + `index.html`. Use these direct links in
 each app's store listing and in-app "Privacy" / "Terms" links.
 
+## Apps
+
+| App | Slug | Privacy | Terms |
+| --- | --- | --- | --- |
+| Audio Converter | `audioconverter` | ✅ | ✅ |
+| Authik | `authik` | ✅ | — |
+| Duplicate Cleaner | `duplicatecleaner` | ✅ | — |
+| MonitorSync | `monitorsync` | ✅ | — |
+| PDF Toys | `pdftoys` | ✅ | ✅ |
+| Scann | `scann` | ✅ | — |
+| Snipik | `snipik` | ✅ | — |
+| Volmix | `volmix` | ✅ | — |
+| Zipik | `zipik` | ✅ | — |
+
 ## Adding a new app
 
 1. Copy the `_template` folder and rename it to your app's slug, e.g.:

@@ -858,6 +858,27 @@ svg {
   margin-bottom: 8px;
 }
 
+.legal table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 24px;
+  font-size: 0.95rem;
+}
+
+.legal th,
+.legal td {
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--line, rgba(128, 128, 128, 0.3));
+  color: var(--ink-soft);
+  vertical-align: top;
+}
+
+.legal th {
+  color: var(--ink, inherit);
+  font-weight: 600;
+}
+
 /* --- Scroll reveal -------------------------------------------------------- */
 /* Only hide content when JS is active (html.js), so the page is fully
    readable even if JS is disabled or slow to run. */

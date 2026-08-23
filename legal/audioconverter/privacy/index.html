@@ -13,7 +13,7 @@
       <a class="back" href="../../../">&larr; Gemiry</a>
 
       <h1>Privacy Policy for Audio Converter</h1>
-      <p class="updated">Last updated: August 22, 2026</p>
+      <p class="updated">Last updated: August 23, 2026</p>
 
       <p>
         This Privacy Policy explains how Gemiry Company Limited ("Gemiry," "we,"
@@ -21,16 +21,28 @@
         <strong>Audio Converter</strong> (the "App"), an app for converting audio
         files. It applies to every version of the App, including those
         distributed through the <strong>Mac App Store</strong> (macOS) and
-        <strong>Google Play</strong> (Android). We built Audio Converter with
-        privacy in mind.
+        <strong>Google Play</strong> (Android).
+      </p>
+      <p>
+        In short: your audio files never leave your device, and we do not collect
+        personal information about you. The App does send anonymous usage
+        statistics to Google Analytics for Firebase so we can see which formats
+        people convert to and whether conversions succeed. That is on by default
+        and <strong>you can turn it off</strong> &mdash; section 4 explains what is
+        sent and how to stop it.
       </p>
 
-      <h2>1. We do not collect your information</h2>
+      <h2>1. We do not collect personal information</h2>
       <p>
-        Audio Converter does <strong>not</strong> collect, store, or share your
-        personal information. We do not ask you to create an account, and the
-        App does not gather your name, email address, contacts, or other
-        personal data to send to us.
+        We do <strong>not</strong> collect, store, or share your personal
+        information. We do not ask you to create an account, and the App does not
+        gather your name, email address, contacts, or other personal data to send
+        to us. We have no database of users and no way to identify you.
+      </p>
+      <p>
+        The one thing the App does send is the anonymous, aggregate usage data
+        described in section 4. It is not tied to your identity, and it never
+        contains anything about the files you convert.
       </p>
 
       <h2>2. Your audio files stay on your device</h2>
@@ -40,6 +52,12 @@
         select only to perform the conversion you asked for, and writes the
         result where you choose. Your audio files and their contents are never
         uploaded to our servers or shared with us or any third party.
+      </p>
+      <p>
+        This is also true of everything <em>about</em> your files. We never send
+        file names, folder names, file paths, track titles, artist or album tags,
+        cover art, or file durations. Nothing that identifies a specific file
+        leaves your device.
       </p>
       <p>Any settings or preferences you configure are kept on your device.</p>
 
@@ -54,34 +72,70 @@
         your system settings, though the App will not be able to convert files
         without them.
       </p>
-
-      <h2>4. Third-party services</h2>
       <p>
-        The App uses third-party software development kits (SDKs) that may
-        collect limited, anonymous technical information on their own behalf. We
-        use these only to keep the App stable and to understand how it is used
-        in aggregate &mdash; never to identify you.
+        The Android version also holds the network permission. It is used for one
+        purpose only &mdash; sending the usage statistics in section 4 &mdash; and
+        for nothing else. There is no cloud conversion, no remote processing, and
+        no way to load audio from a URL or a stream.
       </p>
+
+      <h2>4. Analytics, and how to turn it off</h2>
+      <p>
+        The App uses <strong>Google Analytics for Firebase</strong> to collect
+        limited, anonymous usage statistics. We use these only to understand how
+        the App is used in aggregate &mdash; which output formats matter, and
+        whether conversions are succeeding &mdash; never to identify you.
+      </p>
+      <p><strong>What is sent.</strong> Two events of our own:</p>
       <ul>
         <li>
-          <strong>Google Firebase</strong> (including Google Analytics for
-          Firebase and Firebase Crashlytics) &mdash; anonymous usage statistics
-          and crash reports. This may include app events, crash diagnostics,
-          device model, operating system version, app version, and
-          approximate (country-level) location derived from your IP address.
+          when you start a conversion &mdash; the output format, the quality
+          setting, and a rough <em>size band</em> for the batch (for example
+          "2&ndash;5 files" rather than the exact number);
+        </li>
+        <li>
+          when a batch finishes &mdash; the output format, and how many files
+          succeeded and failed.
         </li>
       </ul>
       <p>
-        This information is collected and processed by Google under its own
-        privacy policy; see
+        Alongside those, Firebase collects a standard set of its own signals:
+        app opens and sessions, app version, device model, operating system
+        version, and approximate (country-level) location derived from your IP
+        address. It also assigns a random <strong>app instance ID</strong> to
+        your installation. That ID is per-install, not per-person: clearing the
+        App's data or reinstalling it generates a new one.
+      </p>
+      <p>
+        <strong>What is never sent</strong> &mdash; your audio, any part of its
+        contents, file names, folder paths, tags, or cover art. The App also does
+        <strong>not</strong> use an advertising ID; the permission for it is
+        removed from the Android build, so Google never receives one from us.
+      </p>
+      <p>
+        <strong>How to turn it off.</strong> On Android, open
+        <strong>Settings &rsaquo; Privacy</strong> and switch off
+        <strong>Share anonymous usage data</strong>. Collection is
+        <strong>on by default</strong>, so it continues until you switch it off.
+        Once you do, the App stops sending both its own events and Firebase's
+        automatic ones. Turning it off stops any future collection; it does not
+        retract data that was already sent before you switched it off. You can
+        also uninstall the App at any time, which stops collection entirely.
+      </p>
+      <p>
+        This information is collected and processed by Google as our service
+        provider, under its own privacy policy; see
         <a href="https://policies.google.com/privacy" rel="noopener noreferrer"
           >Google's Privacy Policy</a
         >
         and
         <a href="https://firebase.google.com/support/privacy" rel="noopener noreferrer"
           >Firebase Privacy and Security</a
-        >. We never send your audio files, file contents, file names, or folder
-        paths to these services.
+        >.
+      </p>
+      <p>
+        We do not use crash reporting, advertising, or attribution SDKs, and the
+        App contains no ads.
       </p>
       <p>
         Separately, the store you installed the App from &mdash; Apple or
@@ -94,9 +148,9 @@
       <h2>5. Sharing</h2>
       <p>
         We do not sell your personal information. The only information leaving
-        the App is the anonymous diagnostic and usage data described above,
-        which goes to Google as our service provider. We may also disclose
-        information where required by law.
+        the App is the anonymous usage data described above, which goes to Google
+        as our service provider. We may also disclose information where required
+        by law.
       </p>
 
       <h2>6. Children's privacy</h2>
@@ -111,12 +165,18 @@
         Depending on where you live, privacy laws such as the GDPR (European
         Economic Area and United Kingdom), the CCPA/CPRA (California), and
         similar laws elsewhere give you the right to access, correct, delete, or
-        export personal data a company holds about you. We hold no personal data
-        about you, so there is nothing for us to retrieve, correct, export, or
-        delete. Requests generally concern the anonymous data held by Google as
-        described above; you can also uninstall the App at any time to stop any
-        further collection. To make a request, contact us using the details
-        below.
+        export personal data a company holds about you.
+      </p>
+      <p>
+        We hold no personal data about you, so in most cases there is nothing for
+        us to retrieve, correct, export, or delete. Requests generally concern the
+        anonymous analytics data held by Google as described in section 4. You can
+        act on that directly and immediately: switch off
+        <strong>Share anonymous usage data</strong> in the App's Privacy settings
+        to stop further collection, and clear the App's data or reinstall it to
+        reset the app instance ID that past data was associated with. To make a
+        request of us, or to ask us to approach Google on your behalf, contact us
+        using the details below.
       </p>
 
       <h2>8. Changes to this policy</h2>

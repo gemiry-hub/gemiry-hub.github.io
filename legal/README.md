@@ -19,6 +19,7 @@ each app's store listing and in-app "Privacy" / "Terms" links.
 
 | App | Slug | Privacy | Terms |
 | --- | --- | --- | --- |
+| Any Video Converter | `videoconverter` | ✅ | ✅ |
 | Audio Converter | `audioconverter` | ✅ | ✅ |
 | Authik | `authik` | ✅ | ✅ |
 | Duplicate Cleaner | `duplicatecleaner` | ✅ | ✅ |

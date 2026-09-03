@@ -22,6 +22,7 @@ each app's store listing and in-app "Privacy" / "Terms" links.
 | Any Video Converter | `videoconverter` | ✅ | ✅ |
 | Audio Converter | `audioconverter` | ✅ | ✅ |
 | Authik | `authik` | ✅ | ✅ |
+| Cleaner11 | `cleaner11` | ✅ | ✅ |
 | Duplicate Cleaner | `duplicatecleaner` | ✅ | ✅ |
 | MonitorSync | `monitorsync` | ✅ | ✅ |
 | PDF Toys | `pdftoys` | ✅ | ✅ |

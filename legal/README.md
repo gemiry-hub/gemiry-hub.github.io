@@ -26,6 +26,7 @@ each app's store listing and in-app "Privacy" / "Terms" links.
 | Duplicate Cleaner | `duplicatecleaner` | ✅ | ✅ |
 | MonitorSync | `monitorsync` | ✅ | ✅ |
 | PDF Toys | `pdftoys` | ✅ | ✅ |
+| ProRecovery | `prorecovery` | ✅ | ✅ |
 | ProRip | `prorip` | ✅ | ✅ |
 | ProShred | `proshred` | ✅ | ✅ |
 | Re:Sound | `resound` | ✅ | — |

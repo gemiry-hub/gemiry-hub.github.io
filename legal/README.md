@@ -32,6 +32,7 @@ each app's store listing and in-app "Privacy" / "Terms" links.
 | Re:Sound | `resound` | ✅ | — |
 | Scann | `scann` | ✅ | ✅ |
 | Snipik | `snipik` | ✅ | ✅ |
+| StickNote | `sticknote` | ✅ | ✅ |
 | Volmix | `volmix` | ✅ | ✅ |
 | Zipik | `zipik` | ✅ | ✅ |
 

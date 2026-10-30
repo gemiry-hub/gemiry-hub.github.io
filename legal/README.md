@@ -24,6 +24,7 @@ each app's store listing and in-app "Privacy" / "Terms" links.
 | Authik | `authik` | ✅ | ✅ |
 | Cleaner11 | `cleaner11` | ✅ | ✅ |
 | Duplicate Cleaner | `duplicatecleaner` | ✅ | ✅ |
+| FilmScan | `filmscan` | ✅ | — |
 | MonitorSync | `monitorsync` | ✅ | ✅ |
 | PDF Toys | `pdftoys` | ✅ | ✅ |
 | ProRecovery | `prorecovery` | ✅ | ✅ |

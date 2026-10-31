@@ -31,6 +31,7 @@ each app's store listing and in-app "Privacy" / "Terms" links.
 | ProRip | `prorip` | ✅ | ✅ |
 | ProShred | `proshred` | ✅ | ✅ |
 | Re:Sound | `resound` | ✅ | — |
+| ReScreen | `rescreen` | ✅ | — |
 | PDF Reader | `readd` | ✅ | — |
 | Scann | `scann` | ✅ | ✅ |
 | Snipik | `snipik` | ✅ | ✅ |

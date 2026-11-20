@@ -23,6 +23,7 @@ each app's store listing and in-app "Privacy" / "Terms" links.
 | Audio Converter | `audioconverter` | ✅ | ✅ |
 | Authik | `authik` | ✅ | ✅ |
 | Cleaner11 | `cleaner11` | ✅ | ✅ |
+| Disk Info | `diskinfo` | ✅ | — |
 | Disk Speed | `diskspeed` | ✅ | — |
 | Duplicate Cleaner | `duplicatecleaner` | ✅ | ✅ |
 | FilmScan | `filmscan` | ✅ | — |

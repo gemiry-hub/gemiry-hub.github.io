@@ -38,6 +38,7 @@ each app's store listing and in-app "Privacy" / "Terms" links.
 | Scann | `scann` | ✅ | ✅ |
 | Snipik | `snipik` | ✅ | ✅ |
 | StickNote | `sticknote` | ✅ | ✅ |
+| Video Player | `videoplayer` | ✅ | — |
 | Volmix | `volmix` | ✅ | ✅ |
 | Zipik | `zipik` | ✅ | ✅ |
 

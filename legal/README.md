@@ -29,6 +29,7 @@ each app's store listing and in-app "Privacy" / "Terms" links.
 | FilmScan | `filmscan` | ✅ | — |
 | MonitorSync | `monitorsync` | ✅ | ✅ |
 | PDF Toys | `pdftoys` | ✅ | ✅ |
+| ProPartition | `propartition` | ✅ | — |
 | ProRecovery | `prorecovery` | ✅ | ✅ |
 | ProRip | `prorip` | ✅ | ✅ |
 | ProShred | `proshred` | ✅ | ✅ |

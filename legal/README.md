@@ -22,13 +22,32 @@ each app's store listing and in-app "Privacy" / "Terms" links.
 | Any Video Converter | `videoconverter` | ✅ | ✅ |
 | Audio Converter | `audioconverter` | ✅ | ✅ |
 | Authik | `authik` | ✅ | ✅ |
+| Cleaner11 | `cleaner11` | ✅ | ✅ |
+| Disk Info | `diskinfo` | ✅ | — |
+| Disk Speed | `diskspeed` | ✅ | — |
 | Duplicate Cleaner | `duplicatecleaner` | ✅ | ✅ |
+| FilmScan | `filmscan` | ✅ | — |
 | MonitorSync | `monitorsync` | ✅ | ✅ |
 | PDF Toys | `pdftoys` | ✅ | ✅ |
+| ProPartition | `propartition` | ✅ | — |
+| ProRecovery | `prorecovery` | ✅ | ✅ |
+| ProRip | `prorip` | ✅ | ✅ |
+| ProShred | `proshred` | ✅ | ✅ |
+| Re:Sound | `resound` | ✅ | — |
+| ReScreen | `rescreen` | ✅ | — |
+| PDF Reader | `readd` | ✅ | — |
 | Scann | `scann` | ✅ | ✅ |
 | Snipik | `snipik` | ✅ | ✅ |
+| StickNote | `sticknote` | ✅ | ✅ |
+| Video Player | `videoplayer` | ✅ | ✅ |
 | Volmix | `volmix` | ✅ | ✅ |
 | Zipik | `zipik` | ✅ | ✅ |
+
+Video Converter (Android) also has an **LGPL source** page,
+`legal/videoconverter/source/`, that serves the FFmpeg and LAME source archive
+for each released version (the app's notices link there). Add a row to its
+Releases table and the archive beside it for each new version, and keep old
+archives for as long as that version is distributed.
 
 ## Adding a new app
 

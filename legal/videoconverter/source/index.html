@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LGPL Source Code — Video Converter · Gemiry</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="icon" type="image/svg+xml" href="../../../assets/img/favicon.svg" />
+    <link rel="stylesheet" href="../../../assets/css/style.css" />
+  </head>
+  <body>
+    <article class="legal">
+      <a class="back" href="../../../">&larr; Gemiry</a>
+
+      <h1>LGPL Source Code for Video Converter</h1>
+      <p class="updated">Last updated: November 3, 2026</p>
+
+      <p>
+        <strong>Video Converter</strong> on Android, made by Gemiry Company
+        Limited ("Gemiry," "we," "us," or "our"), ships two libraries licensed
+        under the GNU Lesser General Public License (LGPL):
+      </p>
+      <ul>
+        <li>
+          <strong>FFmpeg 7.1</strong> &mdash; libavformat, libavcodec,
+          libavutil, and libswscale;
+        </li>
+        <li><strong>LAME 3.100</strong> &mdash; the libmp3lame MP3 encoder.</li>
+      </ul>
+      <p>
+        This page offers their source code, and the scripts used to build them
+        for the App, as the App's third-party notices promise. There is one
+        archive per released version of the App.
+      </p>
+
+      <h2>1. Releases</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>App version</th>
+            <th>Archive</th>
+            <th>SHA-256</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1.0.0 (versionCode 2 and 3), 1.0.1 (versionCode 4)</td>
+            <td>
+              <a href="video-converter-1.0.0-lgpl-sources.tar.gz" download
+                >video-converter-1.0.0-lgpl-sources.tar.gz</a
+              >
+              (17,566,971 bytes;
+              <a href="video-converter-1.0.0-lgpl-sources.tar.gz.sha256" download
+                >.sha256</a
+              >)
+            </td>
+            <td>
+              <code style="word-break: break-all"
+                >d09bfe43d70db85d00a86622f41a309a28e0a1b21135f0b28da6789665d44250</code
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>2. What each archive holds</h2>
+      <p>
+        Each archive unpacks to one folder,
+        <code>video-converter-&lt;version&gt;-lgpl-sources/</code>, containing:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th>Path</th>
+            <th>Content</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>ffmpeg/</code></td>
+            <td>
+              The complete FFmpeg source at commit
+              <code style="word-break: break-all"
+                >b08d7969c550a804a59511c7b83f2dd8cc0499b8</code
+              >
+              (tag <code>n7.1</code>), with its licence
+              <code>COPYING.LGPLv2.1</code>
+            </td>
+          </tr>
+          <tr>
+            <td><code>lame-3.100/</code></td>
+            <td>The LAME 3.100 source, unmodified, with its licence <code>COPYING</code></td>
+          </tr>
+          <tr>
+            <td><code>build/native/ffmpeg/</code></td>
+            <td>
+              <code>build-ffmpeg.sh</code> (the exact FFmpeg configure line),
+              <code>PINNED_COMMIT</code>, and a README
+            </td>
+          </tr>
+          <tr>
+            <td><code>build/core/engine/src/main/cpp/</code></td>
+            <td>
+              <code>CMakeLists.txt</code>, the LAME <code>config.h</code>, and
+              the JNI bridge sources that link to the libraries
+            </td>
+          </tr>
+          <tr>
+            <td><code>build/shipped.sha256</code></td>
+            <td>The SHA-256 of each FFmpeg library file that shipped in the App</td>
+          </tr>
+          <tr>
+            <td><code>README.md</code></td>
+            <td>What each part is, the versions, the toolchain, and the rebuild steps</td>
+          </tr>
+          <tr>
+            <td><code>MANIFEST.sha256</code></td>
+            <td>The SHA-256 of every file in the archive except itself and the README</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h2>3. Checking the download</h2>
+      <ul>
+        <li>
+          The archive: compare its SHA-256 with the value above, for example with
+          <code>sha256sum -c video-converter-1.0.0-lgpl-sources.tar.gz.sha256</code>,
+          or on Windows <code>Get-FileHash -Algorithm SHA256</code>.
+        </li>
+        <li>
+          Its contents: extract it, change into
+          <code>video-converter-1.0.0-lgpl-sources/</code>, and run
+          <code>sha256sum -c MANIFEST.sha256</code>.
+        </li>
+      </ul>
+
+      <h2>4. Rebuilding the libraries</h2>
+      <p>
+        The App links these libraries dynamically (<code>libmp3lame.so</code>,
+        <code>libavformat.so</code>, <code>libavcodec.so</code>,
+        <code>libavutil.so</code>, <code>libswscale.so</code>), so you can
+        replace any of them with your own build of the same source. The
+        archive's <code>README.md</code> has the full steps. In short:
+      </p>
+      <ul>
+        <li>
+          Toolchain used: Android NDK 30.0.15729638, CMake 4.1.2, Android API 26,
+          ABIs arm64-v8a, armeabi-v7a, and x86_64. FFmpeg is built with MSYS2.
+        </li>
+        <li>
+          Copy <code>ffmpeg/</code> to <code>build/native/ffmpeg/ffmpeg/</code>
+          and <code>lame-3.100/</code> to <code>build/native/lame/</code>.
+        </li>
+        <li>
+          Build FFmpeg one ABI at a time with
+          <code>build-ffmpeg.sh &lt;abi&gt; --prebuilt</code> in
+          <code>build/native/ffmpeg/</code>, and compare the results with
+          <code>build/shipped.sha256</code>.
+        </li>
+        <li>
+          Build <code>libmp3lame.so</code> and the bridge library with
+          <code>build/core/engine/src/main/cpp/CMakeLists.txt</code>, once per
+          ABI.
+        </li>
+      </ul>
+
+      <h2>5. Contact us</h2>
+      <p>
+        If you have any questions about this source code, contact us at
+        <a href="mailto:feedback@gemiry.com">feedback@gemiry.com</a>.
+      </p>
+    </article>
+  </body>
+</html>
